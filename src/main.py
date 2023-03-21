@@ -1,19 +1,24 @@
 from antlr4 import *
-from SimpleArithmeticLexer import SimpleArithmeticLexer
-from SimpleArithmeticParser import SimpleArithmeticParser
+from grammar_fractalsLexer import grammar_fractalsLexer
+from grammar_fractalsParser import grammar_fractalsParser
 
 # create a stream of input characters
-input_stream = InputStream("3 + 4 * (5 - 2)")
+input_stream = InputStream("size 100")
 
 # create a lexer that reads from the input stream
-lexer = SimpleArithmeticLexer(input_stream)
+lexer = grammar_fractalsLexer(input_stream)
 
 # create a stream of tokens from the lexer
 token_stream = CommonTokenStream(lexer)
 
 # create a parser that reads from the token stream
-parser = SimpleArithmeticParser(token_stream)
+parser = grammar_fractalsParser(token_stream)
 
 # parse the input and print the result
-tree = parser.expr()
+tree = parser.program()
 print(tree.toStringTree(recog=parser))
+
+print(input_stream)
+print(lexer)
+print(token_stream)
+print(parser)
