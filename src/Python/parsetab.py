@@ -6,9 +6,9 @@ _tabversion = '3.10'
 
 _lr_method = 'LALR'
 
-_lr_signature = 'ANGLE CIRCLE COLOR DIGIT DRAW ITERATIONS MIRROR MOVE POLYGON ROTATE SAVE SCALE SHAPE SIZE SQUARE STRING TRIANGLE X_AXIS Y_AXISprogram : statement\n               | statement programstatement : size_statement\n                 | color_statement\n                 | angle_statement\n                 | iterations_statement\n                 | shape_statement\n                 | move_statement\n                 | scale_statement\n                 | rotate_statement\n                 | mirror_statement\n                 | draw_statement\n                 | save_statementsize_statement : SIZE valuecolor_statement : COLOR valueangle_statement : ANGLE valueiterations_statement : ITERATIONS valueshape_statement : SHAPE shapemove_statement : MOVE value valuescale_statement : SCALE valuerotate_statement : ROTATE valuemirror_statement : MIRROR axisdraw_statement : DRAWsave_statement : SAVE filenamefilename : STRINGshape : CIRCLE\n             | SQUARE\n             | TRIANGLE\n             | POLYGONvalue : DIGIT\n             | DIGIT value\n             | STRINGaxis : X_AXIS\n            | Y_AXIS'
+_lr_signature = 'ANGLE APOSTROPHE CIRCLE COLOR COMMA DIVIDE DOT DRAW ID ITERATIONS LPAREN MINUS MIRROR MOVE NUMBER PLUS POLYGON QUOTATION ROTATE RPAREN SAVE SCALE SHAPE SIZE SQUARE STRING TIMES TRIANGLE X_AXIS Y_AXISprogram : statement\n               | statement programstatement : size_statement\n                 | color_statement\n                 | angle_statement\n                 | iterations_statement\n                 | shape_statement\n                 | move_statement\n                 | scale_statement\n                 | rotate_statement\n                 | mirror_statement\n                 | draw_statement\n                 | save_statementsize_statement : SIZE NUMBERcolor_statement : COLOR LPAREN NUMBER COMMA NUMBER COMMA NUMBER COMMA RPAREN\n                       | COLOR NUMBER\n                       | COLOR QUOTATION STRING QUOTATION\n                       | COLOR APOSTROPHE STRING APOSTROPHEangle_statement : ANGLE NUMBERiterations_statement : ITERATIONS NUMBERshape_statement : SHAPE shapemove_statement : MOVE NUMBER NUMBERscale_statement : SCALE NUMBERrotate_statement : ROTATE NUMBERmirror_statement : MIRROR axisdraw_statement : DRAWsave_statement : SAVE STRINGshape : CIRCLE\n             | SQUARE\n             | TRIANGLE\n             | POLYGONaxis : X_AXIS\n            | Y_AXIS'
     
-_lr_action_items = {'SIZE':([0,2,3,4,5,6,7,8,9,10,11,12,13,23,26,27,28,29,30,31,32,33,34,35,36,38,39,40,41,42,43,44,45,46,],[14,14,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-23,-14,-30,-32,-15,-16,-17,-18,-26,-27,-28,-29,-20,-21,-22,-33,-34,-24,-25,-31,-19,]),'COLOR':([0,2,3,4,5,6,7,8,9,10,11,12,13,23,26,27,28,29,30,31,32,33,34,35,36,38,39,40,41,42,43,44,45,46,],[15,15,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-23,-14,-30,-32,-15,-16,-17,-18,-26,-27,-28,-29,-20,-21,-22,-33,-34,-24,-25,-31,-19,]),'ANGLE':([0,2,3,4,5,6,7,8,9,10,11,12,13,23,26,27,28,29,30,31,32,33,34,35,36,38,39,40,41,42,43,44,45,46,],[16,16,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-23,-14,-30,-32,-15,-16,-17,-18,-26,-27,-28,-29,-20,-21,-22,-33,-34,-24,-25,-31,-19,]),'ITERATIONS':([0,2,3,4,5,6,7,8,9,10,11,12,13,23,26,27,28,29,30,31,32,33,34,35,36,38,39,40,41,42,43,44,45,46,],[17,17,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-23,-14,-30,-32,-15,-16,-17,-18,-26,-27,-28,-29,-20,-21,-22,-33,-34,-24,-25,-31,-19,]),'SHAPE':([0,2,3,4,5,6,7,8,9,10,11,12,13,23,26,27,28,29,30,31,32,33,34,35,36,38,39,40,41,42,43,44,45,46,],[18,18,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-23,-14,-30,-32,-15,-16,-17,-18,-26,-27,-28,-29,-20,-21,-22,-33,-34,-24,-25,-31,-19,]),'MOVE':([0,2,3,4,5,6,7,8,9,10,11,12,13,23,26,27,28,29,30,31,32,33,34,35,36,38,39,40,41,42,43,44,45,46,],[19,19,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-23,-14,-30,-32,-15,-16,-17,-18,-26,-27,-28,-29,-20,-21,-22,-33,-34,-24,-25,-31,-19,]),'SCALE':([0,2,3,4,5,6,7,8,9,10,11,12,13,23,26,27,28,29,30,31,32,33,34,35,36,38,39,40,41,42,43,44,45,46,],[20,20,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-23,-14,-30,-32,-15,-16,-17,-18,-26,-27,-28,-29,-20,-21,-22,-33,-34,-24,-25,-31,-19,]),'ROTATE':([0,2,3,4,5,6,7,8,9,10,11,12,13,23,26,27,28,29,30,31,32,33,34,35,36,38,39,40,41,42,43,44,45,46,],[21,21,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-23,-14,-30,-32,-15,-16,-17,-18,-26,-27,-28,-29,-20,-21,-22,-33,-34,-24,-25,-31,-19,]),'MIRROR':([0,2,3,4,5,6,7,8,9,10,11,12,13,23,26,27,28,29,30,31,32,33,34,35,36,38,39,40,41,42,43,44,45,46,],[22,22,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-23,-14,-30,-32,-15,-16,-17,-18,-26,-27,-28,-29,-20,-21,-22,-33,-34,-24,-25,-31,-19,]),'DRAW':([0,2,3,4,5,6,7,8,9,10,11,12,13,23,26,27,28,29,30,31,32,33,34,35,36,38,39,40,41,42,43,44,45,46,],[23,23,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-23,-14,-30,-32,-15,-16,-17,-18,-26,-27,-28,-29,-20,-21,-22,-33,-34,-24,-25,-31,-19,]),'SAVE':([0,2,3,4,5,6,7,8,9,10,11,12,13,23,26,27,28,29,30,31,32,33,34,35,36,38,39,40,41,42,43,44,45,46,],[24,24,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-23,-14,-30,-32,-15,-16,-17,-18,-26,-27,-28,-29,-20,-21,-22,-33,-34,-24,-25,-31,-19,]),'$end':([1,2,3,4,5,6,7,8,9,10,11,12,13,23,25,26,27,28,29,30,31,32,33,34,35,36,38,39,40,41,42,43,44,45,46,],[0,-1,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-23,-2,-14,-30,-32,-15,-16,-17,-18,-26,-27,-28,-29,-20,-21,-22,-33,-34,-24,-25,-31,-19,]),'DIGIT':([14,15,16,17,19,20,21,27,28,37,45,],[27,27,27,27,27,27,27,27,-32,27,-31,]),'STRING':([14,15,16,17,19,20,21,24,27,28,37,45,],[28,28,28,28,28,28,28,44,28,-32,28,-31,]),'CIRCLE':([18,],[33,]),'SQUARE':([18,],[34,]),'TRIANGLE':([18,],[35,]),'POLYGON':([18,],[36,]),'X_AXIS':([22,],[41,]),'Y_AXIS':([22,],[42,]),}
+_lr_action_items = {'SIZE':([0,2,3,4,5,6,7,8,9,10,11,12,13,23,26,28,31,32,33,34,35,36,37,39,40,41,42,43,44,48,50,51,56,],[14,14,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-26,-14,-16,-19,-20,-21,-28,-29,-30,-31,-23,-24,-25,-32,-33,-27,-22,-17,-18,-15,]),'COLOR':([0,2,3,4,5,6,7,8,9,10,11,12,13,23,26,28,31,32,33,34,35,36,37,39,40,41,42,43,44,48,50,51,56,],[15,15,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-26,-14,-16,-19,-20,-21,-28,-29,-30,-31,-23,-24,-25,-32,-33,-27,-22,-17,-18,-15,]),'ANGLE':([0,2,3,4,5,6,7,8,9,10,11,12,13,23,26,28,31,32,33,34,35,36,37,39,40,41,42,43,44,48,50,51,56,],[16,16,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-26,-14,-16,-19,-20,-21,-28,-29,-30,-31,-23,-24,-25,-32,-33,-27,-22,-17,-18,-15,]),'ITERATIONS':([0,2,3,4,5,6,7,8,9,10,11,12,13,23,26,28,31,32,33,34,35,36,37,39,40,41,42,43,44,48,50,51,56,],[17,17,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-26,-14,-16,-19,-20,-21,-28,-29,-30,-31,-23,-24,-25,-32,-33,-27,-22,-17,-18,-15,]),'SHAPE':([0,2,3,4,5,6,7,8,9,10,11,12,13,23,26,28,31,32,33,34,35,36,37,39,40,41,42,43,44,48,50,51,56,],[18,18,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-26,-14,-16,-19,-20,-21,-28,-29,-30,-31,-23,-24,-25,-32,-33,-27,-22,-17,-18,-15,]),'MOVE':([0,2,3,4,5,6,7,8,9,10,11,12,13,23,26,28,31,32,33,34,35,36,37,39,40,41,42,43,44,48,50,51,56,],[19,19,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-26,-14,-16,-19,-20,-21,-28,-29,-30,-31,-23,-24,-25,-32,-33,-27,-22,-17,-18,-15,]),'SCALE':([0,2,3,4,5,6,7,8,9,10,11,12,13,23,26,28,31,32,33,34,35,36,37,39,40,41,42,43,44,48,50,51,56,],[20,20,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-26,-14,-16,-19,-20,-21,-28,-29,-30,-31,-23,-24,-25,-32,-33,-27,-22,-17,-18,-15,]),'ROTATE':([0,2,3,4,5,6,7,8,9,10,11,12,13,23,26,28,31,32,33,34,35,36,37,39,40,41,42,43,44,48,50,51,56,],[21,21,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-26,-14,-16,-19,-20,-21,-28,-29,-30,-31,-23,-24,-25,-32,-33,-27,-22,-17,-18,-15,]),'MIRROR':([0,2,3,4,5,6,7,8,9,10,11,12,13,23,26,28,31,32,33,34,35,36,37,39,40,41,42,43,44,48,50,51,56,],[22,22,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-26,-14,-16,-19,-20,-21,-28,-29,-30,-31,-23,-24,-25,-32,-33,-27,-22,-17,-18,-15,]),'DRAW':([0,2,3,4,5,6,7,8,9,10,11,12,13,23,26,28,31,32,33,34,35,36,37,39,40,41,42,43,44,48,50,51,56,],[23,23,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-26,-14,-16,-19,-20,-21,-28,-29,-30,-31,-23,-24,-25,-32,-33,-27,-22,-17,-18,-15,]),'SAVE':([0,2,3,4,5,6,7,8,9,10,11,12,13,23,26,28,31,32,33,34,35,36,37,39,40,41,42,43,44,48,50,51,56,],[24,24,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-26,-14,-16,-19,-20,-21,-28,-29,-30,-31,-23,-24,-25,-32,-33,-27,-22,-17,-18,-15,]),'$end':([1,2,3,4,5,6,7,8,9,10,11,12,13,23,25,26,28,31,32,33,34,35,36,37,39,40,41,42,43,44,48,50,51,56,],[0,-1,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-26,-2,-14,-16,-19,-20,-21,-28,-29,-30,-31,-23,-24,-25,-32,-33,-27,-22,-17,-18,-15,]),'NUMBER':([14,15,16,17,19,20,21,27,38,49,53,],[26,28,31,32,38,39,40,45,48,52,54,]),'LPAREN':([15,],[27,]),'QUOTATION':([15,46,],[29,50,]),'APOSTROPHE':([15,47,],[30,51,]),'CIRCLE':([18,],[34,]),'SQUARE':([18,],[35,]),'TRIANGLE':([18,],[36,]),'POLYGON':([18,],[37,]),'X_AXIS':([22,],[42,]),'Y_AXIS':([22,],[43,]),'STRING':([24,29,30,],[44,46,47,]),'COMMA':([45,52,54,],[49,53,55,]),'RPAREN':([55,],[56,]),}
 
 _lr_action = {}
 for _k, _v in _lr_action_items.items():
@@ -17,7 +17,7 @@ for _k, _v in _lr_action_items.items():
       _lr_action[_x][_k] = _y
 del _lr_action_items
 
-_lr_goto_items = {'program':([0,2,],[1,25,]),'statement':([0,2,],[2,2,]),'size_statement':([0,2,],[3,3,]),'color_statement':([0,2,],[4,4,]),'angle_statement':([0,2,],[5,5,]),'iterations_statement':([0,2,],[6,6,]),'shape_statement':([0,2,],[7,7,]),'move_statement':([0,2,],[8,8,]),'scale_statement':([0,2,],[9,9,]),'rotate_statement':([0,2,],[10,10,]),'mirror_statement':([0,2,],[11,11,]),'draw_statement':([0,2,],[12,12,]),'save_statement':([0,2,],[13,13,]),'value':([14,15,16,17,19,20,21,27,37,],[26,29,30,31,37,38,39,45,46,]),'shape':([18,],[32,]),'axis':([22,],[40,]),'filename':([24,],[43,]),}
+_lr_goto_items = {'program':([0,2,],[1,25,]),'statement':([0,2,],[2,2,]),'size_statement':([0,2,],[3,3,]),'color_statement':([0,2,],[4,4,]),'angle_statement':([0,2,],[5,5,]),'iterations_statement':([0,2,],[6,6,]),'shape_statement':([0,2,],[7,7,]),'move_statement':([0,2,],[8,8,]),'scale_statement':([0,2,],[9,9,]),'rotate_statement':([0,2,],[10,10,]),'mirror_statement':([0,2,],[11,11,]),'draw_statement':([0,2,],[12,12,]),'save_statement':([0,2,],[13,13,]),'shape':([18,],[33,]),'axis':([22,],[41,]),}
 
 _lr_goto = {}
 for _k, _v in _lr_goto_items.items():
@@ -27,38 +27,37 @@ for _k, _v in _lr_goto_items.items():
 del _lr_goto_items
 _lr_productions = [
   ("S' -> program","S'",1,None,None,None),
-  ('program -> statement','program',1,'p_program','main.py',33),
-  ('program -> statement program','program',2,'p_program','main.py',34),
-  ('statement -> size_statement','statement',1,'p_statement','main.py',38),
-  ('statement -> color_statement','statement',1,'p_statement','main.py',39),
-  ('statement -> angle_statement','statement',1,'p_statement','main.py',40),
-  ('statement -> iterations_statement','statement',1,'p_statement','main.py',41),
-  ('statement -> shape_statement','statement',1,'p_statement','main.py',42),
-  ('statement -> move_statement','statement',1,'p_statement','main.py',43),
-  ('statement -> scale_statement','statement',1,'p_statement','main.py',44),
-  ('statement -> rotate_statement','statement',1,'p_statement','main.py',45),
-  ('statement -> mirror_statement','statement',1,'p_statement','main.py',46),
-  ('statement -> draw_statement','statement',1,'p_statement','main.py',47),
-  ('statement -> save_statement','statement',1,'p_statement','main.py',48),
-  ('size_statement -> SIZE value','size_statement',2,'p_size_statement','main.py',52),
-  ('color_statement -> COLOR value','color_statement',2,'p_color_statement','main.py',56),
-  ('angle_statement -> ANGLE value','angle_statement',2,'p_angle_statement','main.py',60),
-  ('iterations_statement -> ITERATIONS value','iterations_statement',2,'p_iterations_statement','main.py',64),
-  ('shape_statement -> SHAPE shape','shape_statement',2,'p_shape_statement','main.py',68),
-  ('move_statement -> MOVE value value','move_statement',3,'p_move_statement','main.py',72),
-  ('scale_statement -> SCALE value','scale_statement',2,'p_scale_statement','main.py',76),
-  ('rotate_statement -> ROTATE value','rotate_statement',2,'p_rotate_statement','main.py',80),
-  ('mirror_statement -> MIRROR axis','mirror_statement',2,'p_mirror_statement','main.py',84),
-  ('draw_statement -> DRAW','draw_statement',1,'p_draw_statement','main.py',88),
-  ('save_statement -> SAVE filename','save_statement',2,'p_save_statement','main.py',92),
-  ('filename -> STRING','filename',1,'p_filename','main.py',96),
-  ('shape -> CIRCLE','shape',1,'p_shape','main.py',100),
-  ('shape -> SQUARE','shape',1,'p_shape','main.py',101),
-  ('shape -> TRIANGLE','shape',1,'p_shape','main.py',102),
-  ('shape -> POLYGON','shape',1,'p_shape','main.py',103),
-  ('value -> DIGIT','value',1,'p_value','main.py',107),
-  ('value -> DIGIT value','value',2,'p_value','main.py',108),
-  ('value -> STRING','value',1,'p_value','main.py',109),
-  ('axis -> X_AXIS','axis',1,'p_axis','main.py',113),
-  ('axis -> Y_AXIS','axis',1,'p_axis','main.py',114),
+  ('program -> statement','program',1,'p_program','main.py',138),
+  ('program -> statement program','program',2,'p_program','main.py',139),
+  ('statement -> size_statement','statement',1,'p_statement','main.py',144),
+  ('statement -> color_statement','statement',1,'p_statement','main.py',145),
+  ('statement -> angle_statement','statement',1,'p_statement','main.py',146),
+  ('statement -> iterations_statement','statement',1,'p_statement','main.py',147),
+  ('statement -> shape_statement','statement',1,'p_statement','main.py',148),
+  ('statement -> move_statement','statement',1,'p_statement','main.py',149),
+  ('statement -> scale_statement','statement',1,'p_statement','main.py',150),
+  ('statement -> rotate_statement','statement',1,'p_statement','main.py',151),
+  ('statement -> mirror_statement','statement',1,'p_statement','main.py',152),
+  ('statement -> draw_statement','statement',1,'p_statement','main.py',153),
+  ('statement -> save_statement','statement',1,'p_statement','main.py',154),
+  ('size_statement -> SIZE NUMBER','size_statement',2,'p_size_statement','main.py',159),
+  ('color_statement -> COLOR LPAREN NUMBER COMMA NUMBER COMMA NUMBER COMMA RPAREN','color_statement',9,'p_color_statement','main.py',164),
+  ('color_statement -> COLOR NUMBER','color_statement',2,'p_color_statement','main.py',165),
+  ('color_statement -> COLOR QUOTATION STRING QUOTATION','color_statement',4,'p_color_statement','main.py',166),
+  ('color_statement -> COLOR APOSTROPHE STRING APOSTROPHE','color_statement',4,'p_color_statement','main.py',167),
+  ('angle_statement -> ANGLE NUMBER','angle_statement',2,'p_angle_statement','main.py',172),
+  ('iterations_statement -> ITERATIONS NUMBER','iterations_statement',2,'p_iterations_statement','main.py',177),
+  ('shape_statement -> SHAPE shape','shape_statement',2,'p_shape_statement','main.py',182),
+  ('move_statement -> MOVE NUMBER NUMBER','move_statement',3,'p_move_statement','main.py',187),
+  ('scale_statement -> SCALE NUMBER','scale_statement',2,'p_scale_statement','main.py',192),
+  ('rotate_statement -> ROTATE NUMBER','rotate_statement',2,'p_rotate_statement','main.py',197),
+  ('mirror_statement -> MIRROR axis','mirror_statement',2,'p_mirror_statement','main.py',202),
+  ('draw_statement -> DRAW','draw_statement',1,'p_draw_statement','main.py',207),
+  ('save_statement -> SAVE STRING','save_statement',2,'p_save_statement','main.py',212),
+  ('shape -> CIRCLE','shape',1,'p_shape','main.py',217),
+  ('shape -> SQUARE','shape',1,'p_shape','main.py',218),
+  ('shape -> TRIANGLE','shape',1,'p_shape','main.py',219),
+  ('shape -> POLYGON','shape',1,'p_shape','main.py',220),
+  ('axis -> X_AXIS','axis',1,'p_axis','main.py',225),
+  ('axis -> Y_AXIS','axis',1,'p_axis','main.py',226),
 ]
