@@ -1,0 +1,8 @@
+size 400
+color red
+angle 90
+iterations 3
+shape triangle
+scale 2
+rotate 180
+draw

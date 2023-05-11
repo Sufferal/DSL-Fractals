@@ -1,0 +1,935 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> program
+Rule 1     program -> statement
+Rule 2     program -> statement program
+Rule 3     statement -> size_statement
+Rule 4     statement -> color_statement
+Rule 5     statement -> angle_statement
+Rule 6     statement -> iterations_statement
+Rule 7     statement -> shape_statement
+Rule 8     statement -> move_statement
+Rule 9     statement -> scale_statement
+Rule 10    statement -> rotate_statement
+Rule 11    statement -> mirror_statement
+Rule 12    statement -> draw_statement
+Rule 13    statement -> save_statement
+Rule 14    size_statement -> SIZE value
+Rule 15    color_statement -> COLOR value
+Rule 16    angle_statement -> ANGLE value
+Rule 17    iterations_statement -> ITERATIONS value
+Rule 18    shape_statement -> SHAPE shape
+Rule 19    move_statement -> MOVE value value
+Rule 20    scale_statement -> SCALE value
+Rule 21    rotate_statement -> ROTATE value
+Rule 22    mirror_statement -> MIRROR axis
+Rule 23    draw_statement -> DRAW
+Rule 24    save_statement -> SAVE filename
+Rule 25    filename -> STRING
+Rule 26    shape -> CIRCLE
+Rule 27    shape -> SQUARE
+Rule 28    shape -> TRIANGLE
+Rule 29    shape -> POLYGON
+Rule 30    value -> DIGIT
+Rule 31    value -> DIGIT value
+Rule 32    value -> STRING
+Rule 33    axis -> X_AXIS
+Rule 34    axis -> Y_AXIS
+
+Terminals, with rules where they appear
+
+ANGLE                : 16
+CIRCLE               : 26
+COLOR                : 15
+DIGIT                : 30 31
+DRAW                 : 23
+ITERATIONS           : 17
+MIRROR               : 22
+MOVE                 : 19
+POLYGON              : 29
+ROTATE               : 21
+SAVE                 : 24
+SCALE                : 20
+SHAPE                : 18
+SIZE                 : 14
+SQUARE               : 27
+STRING               : 25 32
+TRIANGLE             : 28
+X_AXIS               : 33
+Y_AXIS               : 34
+error                : 
+
+Nonterminals, with rules where they appear
+
+angle_statement      : 5
+axis                 : 22
+color_statement      : 4
+draw_statement       : 12
+filename             : 24
+iterations_statement : 6
+mirror_statement     : 11
+move_statement       : 8
+program              : 2 0
+rotate_statement     : 10
+save_statement       : 13
+scale_statement      : 9
+shape                : 18
+shape_statement      : 7
+size_statement       : 3
+statement            : 1 2
+value                : 14 15 16 17 19 19 20 21 31
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . program
+    (1) program -> . statement
+    (2) program -> . statement program
+    (3) statement -> . size_statement
+    (4) statement -> . color_statement
+    (5) statement -> . angle_statement
+    (6) statement -> . iterations_statement
+    (7) statement -> . shape_statement
+    (8) statement -> . move_statement
+    (9) statement -> . scale_statement
+    (10) statement -> . rotate_statement
+    (11) statement -> . mirror_statement
+    (12) statement -> . draw_statement
+    (13) statement -> . save_statement
+    (14) size_statement -> . SIZE value
+    (15) color_statement -> . COLOR value
+    (16) angle_statement -> . ANGLE value
+    (17) iterations_statement -> . ITERATIONS value
+    (18) shape_statement -> . SHAPE shape
+    (19) move_statement -> . MOVE value value
+    (20) scale_statement -> . SCALE value
+    (21) rotate_statement -> . ROTATE value
+    (22) mirror_statement -> . MIRROR axis
+    (23) draw_statement -> . DRAW
+    (24) save_statement -> . SAVE filename
+
+    SIZE            shift and go to state 14
+    COLOR           shift and go to state 15
+    ANGLE           shift and go to state 16
+    ITERATIONS      shift and go to state 17
+    SHAPE           shift and go to state 18
+    MOVE            shift and go to state 19
+    SCALE           shift and go to state 20
+    ROTATE          shift and go to state 21
+    MIRROR          shift and go to state 22
+    DRAW            shift and go to state 23
+    SAVE            shift and go to state 24
+
+    program                        shift and go to state 1
+    statement                      shift and go to state 2
+    size_statement                 shift and go to state 3
+    color_statement                shift and go to state 4
+    angle_statement                shift and go to state 5
+    iterations_statement           shift and go to state 6
+    shape_statement                shift and go to state 7
+    move_statement                 shift and go to state 8
+    scale_statement                shift and go to state 9
+    rotate_statement               shift and go to state 10
+    mirror_statement               shift and go to state 11
+    draw_statement                 shift and go to state 12
+    save_statement                 shift and go to state 13
+
+state 1
+
+    (0) S' -> program .
+
+
+
+state 2
+
+    (1) program -> statement .
+    (2) program -> statement . program
+    (1) program -> . statement
+    (2) program -> . statement program
+    (3) statement -> . size_statement
+    (4) statement -> . color_statement
+    (5) statement -> . angle_statement
+    (6) statement -> . iterations_statement
+    (7) statement -> . shape_statement
+    (8) statement -> . move_statement
+    (9) statement -> . scale_statement
+    (10) statement -> . rotate_statement
+    (11) statement -> . mirror_statement
+    (12) statement -> . draw_statement
+    (13) statement -> . save_statement
+    (14) size_statement -> . SIZE value
+    (15) color_statement -> . COLOR value
+    (16) angle_statement -> . ANGLE value
+    (17) iterations_statement -> . ITERATIONS value
+    (18) shape_statement -> . SHAPE shape
+    (19) move_statement -> . MOVE value value
+    (20) scale_statement -> . SCALE value
+    (21) rotate_statement -> . ROTATE value
+    (22) mirror_statement -> . MIRROR axis
+    (23) draw_statement -> . DRAW
+    (24) save_statement -> . SAVE filename
+
+    $end            reduce using rule 1 (program -> statement .)
+    SIZE            shift and go to state 14
+    COLOR           shift and go to state 15
+    ANGLE           shift and go to state 16
+    ITERATIONS      shift and go to state 17
+    SHAPE           shift and go to state 18
+    MOVE            shift and go to state 19
+    SCALE           shift and go to state 20
+    ROTATE          shift and go to state 21
+    MIRROR          shift and go to state 22
+    DRAW            shift and go to state 23
+    SAVE            shift and go to state 24
+
+    statement                      shift and go to state 2
+    program                        shift and go to state 25
+    size_statement                 shift and go to state 3
+    color_statement                shift and go to state 4
+    angle_statement                shift and go to state 5
+    iterations_statement           shift and go to state 6
+    shape_statement                shift and go to state 7
+    move_statement                 shift and go to state 8
+    scale_statement                shift and go to state 9
+    rotate_statement               shift and go to state 10
+    mirror_statement               shift and go to state 11
+    draw_statement                 shift and go to state 12
+    save_statement                 shift and go to state 13
+
+state 3
+
+    (3) statement -> size_statement .
+
+    SIZE            reduce using rule 3 (statement -> size_statement .)
+    COLOR           reduce using rule 3 (statement -> size_statement .)
+    ANGLE           reduce using rule 3 (statement -> size_statement .)
+    ITERATIONS      reduce using rule 3 (statement -> size_statement .)
+    SHAPE           reduce using rule 3 (statement -> size_statement .)
+    MOVE            reduce using rule 3 (statement -> size_statement .)
+    SCALE           reduce using rule 3 (statement -> size_statement .)
+    ROTATE          reduce using rule 3 (statement -> size_statement .)
+    MIRROR          reduce using rule 3 (statement -> size_statement .)
+    DRAW            reduce using rule 3 (statement -> size_statement .)
+    SAVE            reduce using rule 3 (statement -> size_statement .)
+    $end            reduce using rule 3 (statement -> size_statement .)
+
+
+state 4
+
+    (4) statement -> color_statement .
+
+    SIZE            reduce using rule 4 (statement -> color_statement .)
+    COLOR           reduce using rule 4 (statement -> color_statement .)
+    ANGLE           reduce using rule 4 (statement -> color_statement .)
+    ITERATIONS      reduce using rule 4 (statement -> color_statement .)
+    SHAPE           reduce using rule 4 (statement -> color_statement .)
+    MOVE            reduce using rule 4 (statement -> color_statement .)
+    SCALE           reduce using rule 4 (statement -> color_statement .)
+    ROTATE          reduce using rule 4 (statement -> color_statement .)
+    MIRROR          reduce using rule 4 (statement -> color_statement .)
+    DRAW            reduce using rule 4 (statement -> color_statement .)
+    SAVE            reduce using rule 4 (statement -> color_statement .)
+    $end            reduce using rule 4 (statement -> color_statement .)
+
+
+state 5
+
+    (5) statement -> angle_statement .
+
+    SIZE            reduce using rule 5 (statement -> angle_statement .)
+    COLOR           reduce using rule 5 (statement -> angle_statement .)
+    ANGLE           reduce using rule 5 (statement -> angle_statement .)
+    ITERATIONS      reduce using rule 5 (statement -> angle_statement .)
+    SHAPE           reduce using rule 5 (statement -> angle_statement .)
+    MOVE            reduce using rule 5 (statement -> angle_statement .)
+    SCALE           reduce using rule 5 (statement -> angle_statement .)
+    ROTATE          reduce using rule 5 (statement -> angle_statement .)
+    MIRROR          reduce using rule 5 (statement -> angle_statement .)
+    DRAW            reduce using rule 5 (statement -> angle_statement .)
+    SAVE            reduce using rule 5 (statement -> angle_statement .)
+    $end            reduce using rule 5 (statement -> angle_statement .)
+
+
+state 6
+
+    (6) statement -> iterations_statement .
+
+    SIZE            reduce using rule 6 (statement -> iterations_statement .)
+    COLOR           reduce using rule 6 (statement -> iterations_statement .)
+    ANGLE           reduce using rule 6 (statement -> iterations_statement .)
+    ITERATIONS      reduce using rule 6 (statement -> iterations_statement .)
+    SHAPE           reduce using rule 6 (statement -> iterations_statement .)
+    MOVE            reduce using rule 6 (statement -> iterations_statement .)
+    SCALE           reduce using rule 6 (statement -> iterations_statement .)
+    ROTATE          reduce using rule 6 (statement -> iterations_statement .)
+    MIRROR          reduce using rule 6 (statement -> iterations_statement .)
+    DRAW            reduce using rule 6 (statement -> iterations_statement .)
+    SAVE            reduce using rule 6 (statement -> iterations_statement .)
+    $end            reduce using rule 6 (statement -> iterations_statement .)
+
+
+state 7
+
+    (7) statement -> shape_statement .
+
+    SIZE            reduce using rule 7 (statement -> shape_statement .)
+    COLOR           reduce using rule 7 (statement -> shape_statement .)
+    ANGLE           reduce using rule 7 (statement -> shape_statement .)
+    ITERATIONS      reduce using rule 7 (statement -> shape_statement .)
+    SHAPE           reduce using rule 7 (statement -> shape_statement .)
+    MOVE            reduce using rule 7 (statement -> shape_statement .)
+    SCALE           reduce using rule 7 (statement -> shape_statement .)
+    ROTATE          reduce using rule 7 (statement -> shape_statement .)
+    MIRROR          reduce using rule 7 (statement -> shape_statement .)
+    DRAW            reduce using rule 7 (statement -> shape_statement .)
+    SAVE            reduce using rule 7 (statement -> shape_statement .)
+    $end            reduce using rule 7 (statement -> shape_statement .)
+
+
+state 8
+
+    (8) statement -> move_statement .
+
+    SIZE            reduce using rule 8 (statement -> move_statement .)
+    COLOR           reduce using rule 8 (statement -> move_statement .)
+    ANGLE           reduce using rule 8 (statement -> move_statement .)
+    ITERATIONS      reduce using rule 8 (statement -> move_statement .)
+    SHAPE           reduce using rule 8 (statement -> move_statement .)
+    MOVE            reduce using rule 8 (statement -> move_statement .)
+    SCALE           reduce using rule 8 (statement -> move_statement .)
+    ROTATE          reduce using rule 8 (statement -> move_statement .)
+    MIRROR          reduce using rule 8 (statement -> move_statement .)
+    DRAW            reduce using rule 8 (statement -> move_statement .)
+    SAVE            reduce using rule 8 (statement -> move_statement .)
+    $end            reduce using rule 8 (statement -> move_statement .)
+
+
+state 9
+
+    (9) statement -> scale_statement .
+
+    SIZE            reduce using rule 9 (statement -> scale_statement .)
+    COLOR           reduce using rule 9 (statement -> scale_statement .)
+    ANGLE           reduce using rule 9 (statement -> scale_statement .)
+    ITERATIONS      reduce using rule 9 (statement -> scale_statement .)
+    SHAPE           reduce using rule 9 (statement -> scale_statement .)
+    MOVE            reduce using rule 9 (statement -> scale_statement .)
+    SCALE           reduce using rule 9 (statement -> scale_statement .)
+    ROTATE          reduce using rule 9 (statement -> scale_statement .)
+    MIRROR          reduce using rule 9 (statement -> scale_statement .)
+    DRAW            reduce using rule 9 (statement -> scale_statement .)
+    SAVE            reduce using rule 9 (statement -> scale_statement .)
+    $end            reduce using rule 9 (statement -> scale_statement .)
+
+
+state 10
+
+    (10) statement -> rotate_statement .
+
+    SIZE            reduce using rule 10 (statement -> rotate_statement .)
+    COLOR           reduce using rule 10 (statement -> rotate_statement .)
+    ANGLE           reduce using rule 10 (statement -> rotate_statement .)
+    ITERATIONS      reduce using rule 10 (statement -> rotate_statement .)
+    SHAPE           reduce using rule 10 (statement -> rotate_statement .)
+    MOVE            reduce using rule 10 (statement -> rotate_statement .)
+    SCALE           reduce using rule 10 (statement -> rotate_statement .)
+    ROTATE          reduce using rule 10 (statement -> rotate_statement .)
+    MIRROR          reduce using rule 10 (statement -> rotate_statement .)
+    DRAW            reduce using rule 10 (statement -> rotate_statement .)
+    SAVE            reduce using rule 10 (statement -> rotate_statement .)
+    $end            reduce using rule 10 (statement -> rotate_statement .)
+
+
+state 11
+
+    (11) statement -> mirror_statement .
+
+    SIZE            reduce using rule 11 (statement -> mirror_statement .)
+    COLOR           reduce using rule 11 (statement -> mirror_statement .)
+    ANGLE           reduce using rule 11 (statement -> mirror_statement .)
+    ITERATIONS      reduce using rule 11 (statement -> mirror_statement .)
+    SHAPE           reduce using rule 11 (statement -> mirror_statement .)
+    MOVE            reduce using rule 11 (statement -> mirror_statement .)
+    SCALE           reduce using rule 11 (statement -> mirror_statement .)
+    ROTATE          reduce using rule 11 (statement -> mirror_statement .)
+    MIRROR          reduce using rule 11 (statement -> mirror_statement .)
+    DRAW            reduce using rule 11 (statement -> mirror_statement .)
+    SAVE            reduce using rule 11 (statement -> mirror_statement .)
+    $end            reduce using rule 11 (statement -> mirror_statement .)
+
+
+state 12
+
+    (12) statement -> draw_statement .
+
+    SIZE            reduce using rule 12 (statement -> draw_statement .)
+    COLOR           reduce using rule 12 (statement -> draw_statement .)
+    ANGLE           reduce using rule 12 (statement -> draw_statement .)
+    ITERATIONS      reduce using rule 12 (statement -> draw_statement .)
+    SHAPE           reduce using rule 12 (statement -> draw_statement .)
+    MOVE            reduce using rule 12 (statement -> draw_statement .)
+    SCALE           reduce using rule 12 (statement -> draw_statement .)
+    ROTATE          reduce using rule 12 (statement -> draw_statement .)
+    MIRROR          reduce using rule 12 (statement -> draw_statement .)
+    DRAW            reduce using rule 12 (statement -> draw_statement .)
+    SAVE            reduce using rule 12 (statement -> draw_statement .)
+    $end            reduce using rule 12 (statement -> draw_statement .)
+
+
+state 13
+
+    (13) statement -> save_statement .
+
+    SIZE            reduce using rule 13 (statement -> save_statement .)
+    COLOR           reduce using rule 13 (statement -> save_statement .)
+    ANGLE           reduce using rule 13 (statement -> save_statement .)
+    ITERATIONS      reduce using rule 13 (statement -> save_statement .)
+    SHAPE           reduce using rule 13 (statement -> save_statement .)
+    MOVE            reduce using rule 13 (statement -> save_statement .)
+    SCALE           reduce using rule 13 (statement -> save_statement .)
+    ROTATE          reduce using rule 13 (statement -> save_statement .)
+    MIRROR          reduce using rule 13 (statement -> save_statement .)
+    DRAW            reduce using rule 13 (statement -> save_statement .)
+    SAVE            reduce using rule 13 (statement -> save_statement .)
+    $end            reduce using rule 13 (statement -> save_statement .)
+
+
+state 14
+
+    (14) size_statement -> SIZE . value
+    (30) value -> . DIGIT
+    (31) value -> . DIGIT value
+    (32) value -> . STRING
+
+    DIGIT           shift and go to state 27
+    STRING          shift and go to state 28
+
+    value                          shift and go to state 26
+
+state 15
+
+    (15) color_statement -> COLOR . value
+    (30) value -> . DIGIT
+    (31) value -> . DIGIT value
+    (32) value -> . STRING
+
+    DIGIT           shift and go to state 27
+    STRING          shift and go to state 28
+
+    value                          shift and go to state 29
+
+state 16
+
+    (16) angle_statement -> ANGLE . value
+    (30) value -> . DIGIT
+    (31) value -> . DIGIT value
+    (32) value -> . STRING
+
+    DIGIT           shift and go to state 27
+    STRING          shift and go to state 28
+
+    value                          shift and go to state 30
+
+state 17
+
+    (17) iterations_statement -> ITERATIONS . value
+    (30) value -> . DIGIT
+    (31) value -> . DIGIT value
+    (32) value -> . STRING
+
+    DIGIT           shift and go to state 27
+    STRING          shift and go to state 28
+
+    value                          shift and go to state 31
+
+state 18
+
+    (18) shape_statement -> SHAPE . shape
+    (26) shape -> . CIRCLE
+    (27) shape -> . SQUARE
+    (28) shape -> . TRIANGLE
+    (29) shape -> . POLYGON
+
+    CIRCLE          shift and go to state 33
+    SQUARE          shift and go to state 34
+    TRIANGLE        shift and go to state 35
+    POLYGON         shift and go to state 36
+
+    shape                          shift and go to state 32
+
+state 19
+
+    (19) move_statement -> MOVE . value value
+    (30) value -> . DIGIT
+    (31) value -> . DIGIT value
+    (32) value -> . STRING
+
+    DIGIT           shift and go to state 27
+    STRING          shift and go to state 28
+
+    value                          shift and go to state 37
+
+state 20
+
+    (20) scale_statement -> SCALE . value
+    (30) value -> . DIGIT
+    (31) value -> . DIGIT value
+    (32) value -> . STRING
+
+    DIGIT           shift and go to state 27
+    STRING          shift and go to state 28
+
+    value                          shift and go to state 38
+
+state 21
+
+    (21) rotate_statement -> ROTATE . value
+    (30) value -> . DIGIT
+    (31) value -> . DIGIT value
+    (32) value -> . STRING
+
+    DIGIT           shift and go to state 27
+    STRING          shift and go to state 28
+
+    value                          shift and go to state 39
+
+state 22
+
+    (22) mirror_statement -> MIRROR . axis
+    (33) axis -> . X_AXIS
+    (34) axis -> . Y_AXIS
+
+    X_AXIS          shift and go to state 41
+    Y_AXIS          shift and go to state 42
+
+    axis                           shift and go to state 40
+
+state 23
+
+    (23) draw_statement -> DRAW .
+
+    SIZE            reduce using rule 23 (draw_statement -> DRAW .)
+    COLOR           reduce using rule 23 (draw_statement -> DRAW .)
+    ANGLE           reduce using rule 23 (draw_statement -> DRAW .)
+    ITERATIONS      reduce using rule 23 (draw_statement -> DRAW .)
+    SHAPE           reduce using rule 23 (draw_statement -> DRAW .)
+    MOVE            reduce using rule 23 (draw_statement -> DRAW .)
+    SCALE           reduce using rule 23 (draw_statement -> DRAW .)
+    ROTATE          reduce using rule 23 (draw_statement -> DRAW .)
+    MIRROR          reduce using rule 23 (draw_statement -> DRAW .)
+    DRAW            reduce using rule 23 (draw_statement -> DRAW .)
+    SAVE            reduce using rule 23 (draw_statement -> DRAW .)
+    $end            reduce using rule 23 (draw_statement -> DRAW .)
+
+
+state 24
+
+    (24) save_statement -> SAVE . filename
+    (25) filename -> . STRING
+
+    STRING          shift and go to state 44
+
+    filename                       shift and go to state 43
+
+state 25
+
+    (2) program -> statement program .
+
+    $end            reduce using rule 2 (program -> statement program .)
+
+
+state 26
+
+    (14) size_statement -> SIZE value .
+
+    SIZE            reduce using rule 14 (size_statement -> SIZE value .)
+    COLOR           reduce using rule 14 (size_statement -> SIZE value .)
+    ANGLE           reduce using rule 14 (size_statement -> SIZE value .)
+    ITERATIONS      reduce using rule 14 (size_statement -> SIZE value .)
+    SHAPE           reduce using rule 14 (size_statement -> SIZE value .)
+    MOVE            reduce using rule 14 (size_statement -> SIZE value .)
+    SCALE           reduce using rule 14 (size_statement -> SIZE value .)
+    ROTATE          reduce using rule 14 (size_statement -> SIZE value .)
+    MIRROR          reduce using rule 14 (size_statement -> SIZE value .)
+    DRAW            reduce using rule 14 (size_statement -> SIZE value .)
+    SAVE            reduce using rule 14 (size_statement -> SIZE value .)
+    $end            reduce using rule 14 (size_statement -> SIZE value .)
+
+
+state 27
+
+    (30) value -> DIGIT .
+    (31) value -> DIGIT . value
+    (30) value -> . DIGIT
+    (31) value -> . DIGIT value
+    (32) value -> . STRING
+
+  ! shift/reduce conflict for DIGIT resolved as shift
+  ! shift/reduce conflict for STRING resolved as shift
+    SIZE            reduce using rule 30 (value -> DIGIT .)
+    COLOR           reduce using rule 30 (value -> DIGIT .)
+    ANGLE           reduce using rule 30 (value -> DIGIT .)
+    ITERATIONS      reduce using rule 30 (value -> DIGIT .)
+    SHAPE           reduce using rule 30 (value -> DIGIT .)
+    MOVE            reduce using rule 30 (value -> DIGIT .)
+    SCALE           reduce using rule 30 (value -> DIGIT .)
+    ROTATE          reduce using rule 30 (value -> DIGIT .)
+    MIRROR          reduce using rule 30 (value -> DIGIT .)
+    DRAW            reduce using rule 30 (value -> DIGIT .)
+    SAVE            reduce using rule 30 (value -> DIGIT .)
+    $end            reduce using rule 30 (value -> DIGIT .)
+    DIGIT           shift and go to state 27
+    STRING          shift and go to state 28
+
+  ! DIGIT           [ reduce using rule 30 (value -> DIGIT .) ]
+  ! STRING          [ reduce using rule 30 (value -> DIGIT .) ]
+
+    value                          shift and go to state 45
+
+state 28
+
+    (32) value -> STRING .
+
+    SIZE            reduce using rule 32 (value -> STRING .)
+    COLOR           reduce using rule 32 (value -> STRING .)
+    ANGLE           reduce using rule 32 (value -> STRING .)
+    ITERATIONS      reduce using rule 32 (value -> STRING .)
+    SHAPE           reduce using rule 32 (value -> STRING .)
+    MOVE            reduce using rule 32 (value -> STRING .)
+    SCALE           reduce using rule 32 (value -> STRING .)
+    ROTATE          reduce using rule 32 (value -> STRING .)
+    MIRROR          reduce using rule 32 (value -> STRING .)
+    DRAW            reduce using rule 32 (value -> STRING .)
+    SAVE            reduce using rule 32 (value -> STRING .)
+    $end            reduce using rule 32 (value -> STRING .)
+    DIGIT           reduce using rule 32 (value -> STRING .)
+    STRING          reduce using rule 32 (value -> STRING .)
+
+
+state 29
+
+    (15) color_statement -> COLOR value .
+
+    SIZE            reduce using rule 15 (color_statement -> COLOR value .)
+    COLOR           reduce using rule 15 (color_statement -> COLOR value .)
+    ANGLE           reduce using rule 15 (color_statement -> COLOR value .)
+    ITERATIONS      reduce using rule 15 (color_statement -> COLOR value .)
+    SHAPE           reduce using rule 15 (color_statement -> COLOR value .)
+    MOVE            reduce using rule 15 (color_statement -> COLOR value .)
+    SCALE           reduce using rule 15 (color_statement -> COLOR value .)
+    ROTATE          reduce using rule 15 (color_statement -> COLOR value .)
+    MIRROR          reduce using rule 15 (color_statement -> COLOR value .)
+    DRAW            reduce using rule 15 (color_statement -> COLOR value .)
+    SAVE            reduce using rule 15 (color_statement -> COLOR value .)
+    $end            reduce using rule 15 (color_statement -> COLOR value .)
+
+
+state 30
+
+    (16) angle_statement -> ANGLE value .
+
+    SIZE            reduce using rule 16 (angle_statement -> ANGLE value .)
+    COLOR           reduce using rule 16 (angle_statement -> ANGLE value .)
+    ANGLE           reduce using rule 16 (angle_statement -> ANGLE value .)
+    ITERATIONS      reduce using rule 16 (angle_statement -> ANGLE value .)
+    SHAPE           reduce using rule 16 (angle_statement -> ANGLE value .)
+    MOVE            reduce using rule 16 (angle_statement -> ANGLE value .)
+    SCALE           reduce using rule 16 (angle_statement -> ANGLE value .)
+    ROTATE          reduce using rule 16 (angle_statement -> ANGLE value .)
+    MIRROR          reduce using rule 16 (angle_statement -> ANGLE value .)
+    DRAW            reduce using rule 16 (angle_statement -> ANGLE value .)
+    SAVE            reduce using rule 16 (angle_statement -> ANGLE value .)
+    $end            reduce using rule 16 (angle_statement -> ANGLE value .)
+
+
+state 31
+
+    (17) iterations_statement -> ITERATIONS value .
+
+    SIZE            reduce using rule 17 (iterations_statement -> ITERATIONS value .)
+    COLOR           reduce using rule 17 (iterations_statement -> ITERATIONS value .)
+    ANGLE           reduce using rule 17 (iterations_statement -> ITERATIONS value .)
+    ITERATIONS      reduce using rule 17 (iterations_statement -> ITERATIONS value .)
+    SHAPE           reduce using rule 17 (iterations_statement -> ITERATIONS value .)
+    MOVE            reduce using rule 17 (iterations_statement -> ITERATIONS value .)
+    SCALE           reduce using rule 17 (iterations_statement -> ITERATIONS value .)
+    ROTATE          reduce using rule 17 (iterations_statement -> ITERATIONS value .)
+    MIRROR          reduce using rule 17 (iterations_statement -> ITERATIONS value .)
+    DRAW            reduce using rule 17 (iterations_statement -> ITERATIONS value .)
+    SAVE            reduce using rule 17 (iterations_statement -> ITERATIONS value .)
+    $end            reduce using rule 17 (iterations_statement -> ITERATIONS value .)
+
+
+state 32
+
+    (18) shape_statement -> SHAPE shape .
+
+    SIZE            reduce using rule 18 (shape_statement -> SHAPE shape .)
+    COLOR           reduce using rule 18 (shape_statement -> SHAPE shape .)
+    ANGLE           reduce using rule 18 (shape_statement -> SHAPE shape .)
+    ITERATIONS      reduce using rule 18 (shape_statement -> SHAPE shape .)
+    SHAPE           reduce using rule 18 (shape_statement -> SHAPE shape .)
+    MOVE            reduce using rule 18 (shape_statement -> SHAPE shape .)
+    SCALE           reduce using rule 18 (shape_statement -> SHAPE shape .)
+    ROTATE          reduce using rule 18 (shape_statement -> SHAPE shape .)
+    MIRROR          reduce using rule 18 (shape_statement -> SHAPE shape .)
+    DRAW            reduce using rule 18 (shape_statement -> SHAPE shape .)
+    SAVE            reduce using rule 18 (shape_statement -> SHAPE shape .)
+    $end            reduce using rule 18 (shape_statement -> SHAPE shape .)
+
+
+state 33
+
+    (26) shape -> CIRCLE .
+
+    SIZE            reduce using rule 26 (shape -> CIRCLE .)
+    COLOR           reduce using rule 26 (shape -> CIRCLE .)
+    ANGLE           reduce using rule 26 (shape -> CIRCLE .)
+    ITERATIONS      reduce using rule 26 (shape -> CIRCLE .)
+    SHAPE           reduce using rule 26 (shape -> CIRCLE .)
+    MOVE            reduce using rule 26 (shape -> CIRCLE .)
+    SCALE           reduce using rule 26 (shape -> CIRCLE .)
+    ROTATE          reduce using rule 26 (shape -> CIRCLE .)
+    MIRROR          reduce using rule 26 (shape -> CIRCLE .)
+    DRAW            reduce using rule 26 (shape -> CIRCLE .)
+    SAVE            reduce using rule 26 (shape -> CIRCLE .)
+    $end            reduce using rule 26 (shape -> CIRCLE .)
+
+
+state 34
+
+    (27) shape -> SQUARE .
+
+    SIZE            reduce using rule 27 (shape -> SQUARE .)
+    COLOR           reduce using rule 27 (shape -> SQUARE .)
+    ANGLE           reduce using rule 27 (shape -> SQUARE .)
+    ITERATIONS      reduce using rule 27 (shape -> SQUARE .)
+    SHAPE           reduce using rule 27 (shape -> SQUARE .)
+    MOVE            reduce using rule 27 (shape -> SQUARE .)
+    SCALE           reduce using rule 27 (shape -> SQUARE .)
+    ROTATE          reduce using rule 27 (shape -> SQUARE .)
+    MIRROR          reduce using rule 27 (shape -> SQUARE .)
+    DRAW            reduce using rule 27 (shape -> SQUARE .)
+    SAVE            reduce using rule 27 (shape -> SQUARE .)
+    $end            reduce using rule 27 (shape -> SQUARE .)
+
+
+state 35
+
+    (28) shape -> TRIANGLE .
+
+    SIZE            reduce using rule 28 (shape -> TRIANGLE .)
+    COLOR           reduce using rule 28 (shape -> TRIANGLE .)
+    ANGLE           reduce using rule 28 (shape -> TRIANGLE .)
+    ITERATIONS      reduce using rule 28 (shape -> TRIANGLE .)
+    SHAPE           reduce using rule 28 (shape -> TRIANGLE .)
+    MOVE            reduce using rule 28 (shape -> TRIANGLE .)
+    SCALE           reduce using rule 28 (shape -> TRIANGLE .)
+    ROTATE          reduce using rule 28 (shape -> TRIANGLE .)
+    MIRROR          reduce using rule 28 (shape -> TRIANGLE .)
+    DRAW            reduce using rule 28 (shape -> TRIANGLE .)
+    SAVE            reduce using rule 28 (shape -> TRIANGLE .)
+    $end            reduce using rule 28 (shape -> TRIANGLE .)
+
+
+state 36
+
+    (29) shape -> POLYGON .
+
+    SIZE            reduce using rule 29 (shape -> POLYGON .)
+    COLOR           reduce using rule 29 (shape -> POLYGON .)
+    ANGLE           reduce using rule 29 (shape -> POLYGON .)
+    ITERATIONS      reduce using rule 29 (shape -> POLYGON .)
+    SHAPE           reduce using rule 29 (shape -> POLYGON .)
+    MOVE            reduce using rule 29 (shape -> POLYGON .)
+    SCALE           reduce using rule 29 (shape -> POLYGON .)
+    ROTATE          reduce using rule 29 (shape -> POLYGON .)
+    MIRROR          reduce using rule 29 (shape -> POLYGON .)
+    DRAW            reduce using rule 29 (shape -> POLYGON .)
+    SAVE            reduce using rule 29 (shape -> POLYGON .)
+    $end            reduce using rule 29 (shape -> POLYGON .)
+
+
+state 37
+
+    (19) move_statement -> MOVE value . value
+    (30) value -> . DIGIT
+    (31) value -> . DIGIT value
+    (32) value -> . STRING
+
+    DIGIT           shift and go to state 27
+    STRING          shift and go to state 28
+
+    value                          shift and go to state 46
+
+state 38
+
+    (20) scale_statement -> SCALE value .
+
+    SIZE            reduce using rule 20 (scale_statement -> SCALE value .)
+    COLOR           reduce using rule 20 (scale_statement -> SCALE value .)
+    ANGLE           reduce using rule 20 (scale_statement -> SCALE value .)
+    ITERATIONS      reduce using rule 20 (scale_statement -> SCALE value .)
+    SHAPE           reduce using rule 20 (scale_statement -> SCALE value .)
+    MOVE            reduce using rule 20 (scale_statement -> SCALE value .)
+    SCALE           reduce using rule 20 (scale_statement -> SCALE value .)
+    ROTATE          reduce using rule 20 (scale_statement -> SCALE value .)
+    MIRROR          reduce using rule 20 (scale_statement -> SCALE value .)
+    DRAW            reduce using rule 20 (scale_statement -> SCALE value .)
+    SAVE            reduce using rule 20 (scale_statement -> SCALE value .)
+    $end            reduce using rule 20 (scale_statement -> SCALE value .)
+
+
+state 39
+
+    (21) rotate_statement -> ROTATE value .
+
+    SIZE            reduce using rule 21 (rotate_statement -> ROTATE value .)
+    COLOR           reduce using rule 21 (rotate_statement -> ROTATE value .)
+    ANGLE           reduce using rule 21 (rotate_statement -> ROTATE value .)
+    ITERATIONS      reduce using rule 21 (rotate_statement -> ROTATE value .)
+    SHAPE           reduce using rule 21 (rotate_statement -> ROTATE value .)
+    MOVE            reduce using rule 21 (rotate_statement -> ROTATE value .)
+    SCALE           reduce using rule 21 (rotate_statement -> ROTATE value .)
+    ROTATE          reduce using rule 21 (rotate_statement -> ROTATE value .)
+    MIRROR          reduce using rule 21 (rotate_statement -> ROTATE value .)
+    DRAW            reduce using rule 21 (rotate_statement -> ROTATE value .)
+    SAVE            reduce using rule 21 (rotate_statement -> ROTATE value .)
+    $end            reduce using rule 21 (rotate_statement -> ROTATE value .)
+
+
+state 40
+
+    (22) mirror_statement -> MIRROR axis .
+
+    SIZE            reduce using rule 22 (mirror_statement -> MIRROR axis .)
+    COLOR           reduce using rule 22 (mirror_statement -> MIRROR axis .)
+    ANGLE           reduce using rule 22 (mirror_statement -> MIRROR axis .)
+    ITERATIONS      reduce using rule 22 (mirror_statement -> MIRROR axis .)
+    SHAPE           reduce using rule 22 (mirror_statement -> MIRROR axis .)
+    MOVE            reduce using rule 22 (mirror_statement -> MIRROR axis .)
+    SCALE           reduce using rule 22 (mirror_statement -> MIRROR axis .)
+    ROTATE          reduce using rule 22 (mirror_statement -> MIRROR axis .)
+    MIRROR          reduce using rule 22 (mirror_statement -> MIRROR axis .)
+    DRAW            reduce using rule 22 (mirror_statement -> MIRROR axis .)
+    SAVE            reduce using rule 22 (mirror_statement -> MIRROR axis .)
+    $end            reduce using rule 22 (mirror_statement -> MIRROR axis .)
+
+
+state 41
+
+    (33) axis -> X_AXIS .
+
+    SIZE            reduce using rule 33 (axis -> X_AXIS .)
+    COLOR           reduce using rule 33 (axis -> X_AXIS .)
+    ANGLE           reduce using rule 33 (axis -> X_AXIS .)
+    ITERATIONS      reduce using rule 33 (axis -> X_AXIS .)
+    SHAPE           reduce using rule 33 (axis -> X_AXIS .)
+    MOVE            reduce using rule 33 (axis -> X_AXIS .)
+    SCALE           reduce using rule 33 (axis -> X_AXIS .)
+    ROTATE          reduce using rule 33 (axis -> X_AXIS .)
+    MIRROR          reduce using rule 33 (axis -> X_AXIS .)
+    DRAW            reduce using rule 33 (axis -> X_AXIS .)
+    SAVE            reduce using rule 33 (axis -> X_AXIS .)
+    $end            reduce using rule 33 (axis -> X_AXIS .)
+
+
+state 42
+
+    (34) axis -> Y_AXIS .
+
+    SIZE            reduce using rule 34 (axis -> Y_AXIS .)
+    COLOR           reduce using rule 34 (axis -> Y_AXIS .)
+    ANGLE           reduce using rule 34 (axis -> Y_AXIS .)
+    ITERATIONS      reduce using rule 34 (axis -> Y_AXIS .)
+    SHAPE           reduce using rule 34 (axis -> Y_AXIS .)
+    MOVE            reduce using rule 34 (axis -> Y_AXIS .)
+    SCALE           reduce using rule 34 (axis -> Y_AXIS .)
+    ROTATE          reduce using rule 34 (axis -> Y_AXIS .)
+    MIRROR          reduce using rule 34 (axis -> Y_AXIS .)
+    DRAW            reduce using rule 34 (axis -> Y_AXIS .)
+    SAVE            reduce using rule 34 (axis -> Y_AXIS .)
+    $end            reduce using rule 34 (axis -> Y_AXIS .)
+
+
+state 43
+
+    (24) save_statement -> SAVE filename .
+
+    SIZE            reduce using rule 24 (save_statement -> SAVE filename .)
+    COLOR           reduce using rule 24 (save_statement -> SAVE filename .)
+    ANGLE           reduce using rule 24 (save_statement -> SAVE filename .)
+    ITERATIONS      reduce using rule 24 (save_statement -> SAVE filename .)
+    SHAPE           reduce using rule 24 (save_statement -> SAVE filename .)
+    MOVE            reduce using rule 24 (save_statement -> SAVE filename .)
+    SCALE           reduce using rule 24 (save_statement -> SAVE filename .)
+    ROTATE          reduce using rule 24 (save_statement -> SAVE filename .)
+    MIRROR          reduce using rule 24 (save_statement -> SAVE filename .)
+    DRAW            reduce using rule 24 (save_statement -> SAVE filename .)
+    SAVE            reduce using rule 24 (save_statement -> SAVE filename .)
+    $end            reduce using rule 24 (save_statement -> SAVE filename .)
+
+
+state 44
+
+    (25) filename -> STRING .
+
+    SIZE            reduce using rule 25 (filename -> STRING .)
+    COLOR           reduce using rule 25 (filename -> STRING .)
+    ANGLE           reduce using rule 25 (filename -> STRING .)
+    ITERATIONS      reduce using rule 25 (filename -> STRING .)
+    SHAPE           reduce using rule 25 (filename -> STRING .)
+    MOVE            reduce using rule 25 (filename -> STRING .)
+    SCALE           reduce using rule 25 (filename -> STRING .)
+    ROTATE          reduce using rule 25 (filename -> STRING .)
+    MIRROR          reduce using rule 25 (filename -> STRING .)
+    DRAW            reduce using rule 25 (filename -> STRING .)
+    SAVE            reduce using rule 25 (filename -> STRING .)
+    $end            reduce using rule 25 (filename -> STRING .)
+
+
+state 45
+
+    (31) value -> DIGIT value .
+
+    SIZE            reduce using rule 31 (value -> DIGIT value .)
+    COLOR           reduce using rule 31 (value -> DIGIT value .)
+    ANGLE           reduce using rule 31 (value -> DIGIT value .)
+    ITERATIONS      reduce using rule 31 (value -> DIGIT value .)
+    SHAPE           reduce using rule 31 (value -> DIGIT value .)
+    MOVE            reduce using rule 31 (value -> DIGIT value .)
+    SCALE           reduce using rule 31 (value -> DIGIT value .)
+    ROTATE          reduce using rule 31 (value -> DIGIT value .)
+    MIRROR          reduce using rule 31 (value -> DIGIT value .)
+    DRAW            reduce using rule 31 (value -> DIGIT value .)
+    SAVE            reduce using rule 31 (value -> DIGIT value .)
+    $end            reduce using rule 31 (value -> DIGIT value .)
+    DIGIT           reduce using rule 31 (value -> DIGIT value .)
+    STRING          reduce using rule 31 (value -> DIGIT value .)
+
+
+state 46
+
+    (19) move_statement -> MOVE value value .
+
+    SIZE            reduce using rule 19 (move_statement -> MOVE value value .)
+    COLOR           reduce using rule 19 (move_statement -> MOVE value value .)
+    ANGLE           reduce using rule 19 (move_statement -> MOVE value value .)
+    ITERATIONS      reduce using rule 19 (move_statement -> MOVE value value .)
+    SHAPE           reduce using rule 19 (move_statement -> MOVE value value .)
+    MOVE            reduce using rule 19 (move_statement -> MOVE value value .)
+    SCALE           reduce using rule 19 (move_statement -> MOVE value value .)
+    ROTATE          reduce using rule 19 (move_statement -> MOVE value value .)
+    MIRROR          reduce using rule 19 (move_statement -> MOVE value value .)
+    DRAW            reduce using rule 19 (move_statement -> MOVE value value .)
+    SAVE            reduce using rule 19 (move_statement -> MOVE value value .)
+    $end            reduce using rule 19 (move_statement -> MOVE value value .)
+
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: shift/reduce conflict for DIGIT in state 27 resolved as shift
+WARNING: shift/reduce conflict for STRING in state 27 resolved as shift
