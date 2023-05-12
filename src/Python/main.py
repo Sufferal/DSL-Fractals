@@ -1,7 +1,6 @@
 import ply.lex as lex
 import ply.yacc as yacc
 
-
 # List of reserved tokens
 reserved = {
     'size': 'SIZE',
@@ -51,6 +50,7 @@ t_DOT = r'\.'
 t_COMMA = r'\,'
 t_APOSTROPHE = r"\'"
 t_QUOTATION = r'\"'
+
 
 # Rule for reserved words
 def t_SIZE(t):
@@ -127,6 +127,7 @@ def t_TRIANGLE(t):
     r'triangle'
     return t
 
+
 # Rule for comments
 def t_COMMENT(t):
     r'\#.*'
@@ -152,14 +153,14 @@ def t_newline(t):
     t.lexer.lineno += len(t.value)
 
 
-# A string containing ignored characters (spaces and tabs)
-t_ignore = ' \t'
-
-
 # Error handling rule
 def t_error(t):
     print("Illegal character '%s'" % t.value[0])
     t.lexer.skip(1)
+
+
+# A string containing ignored characters (spaces and tabs)
+t_ignore = ' \t'
 
 
 # Define the grammar
@@ -244,7 +245,7 @@ def p_axis(p):
 # Define the parser error handling function
 def p_error(p):
     if p:
-        print(f"Syntax error at line {p.lineno-7}: unexpected token '{p.value}'")
+        print(f"Syntax error at line {p.lineno}: unexpected token '{p.value}'")
     else:
         print("Syntax error at EOF")
 
@@ -291,7 +292,6 @@ def set_variable_value(name, value, scope):
 
 # Define a function to analyze a program
 def analyze_program(program, lexer):
-    # TODO: take the tokens into parser
     try:
         # Parse the program
         parsed_result = parser.parse(program, lexer=lexer)
@@ -324,6 +324,29 @@ def analyze_program(program, lexer):
 
 
 if __name__ == '__main__':
+    # Extracting code from file
+    file = open('source.txt', 'r')
+    data = file.read()
+    lexer.input(data)
+    # Debugging purpose
+    while True:
+        tok = lexer.token()
+        if not tok:
+            break
+        print(tok.type, tok.value, tok.lineno)
+
+    parser.parse(data, lexer=lexer)
+    # Analyze the program
+    # analyze_program(data, lexer)
+
+
+
+
+
+
+
+
+
     # # Add variables to the symbol table
     # add_variable('canvas_size', 1000, 'size', 'global')
     # add_variable('fractal_color', 0, 'color', 'global')
@@ -335,23 +358,7 @@ if __name__ == '__main__':
     # fractal_color = get_variable_value('fractal_color', 'global')
     # number_of_iterations = get_variable_value('number_of_iterations', 'global')
     # fractal_shape = get_variable_value('fractal_shape', 'global')
-
-
-    # Extracting code from file
-    file = open('source.txt', 'r')
-    data = file.read()
-    lexer.input(data)
-    # Debugging purpose
-    while True:
-        tok = lexer.token()
-        if not tok:
-            break
-        print(tok)
-
     # program = data.format(canvas_size, fractal_color, number_of_iterations, fractal_shape)
-
-    # Analyze the program
-    analyze_program(data, lexer)
     # analyze_program(program, lexer)
     # Print the symbol table
     # print("Symbol table:")
