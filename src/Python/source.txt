@@ -1,9 +1,6 @@
-size 400
-color 'red'
-angle 90
-iterations 3
+size 1000
+color 0
 shape triangle
-scale 25
-rotate 180
-move 12 2
+scale 1
+rotate 0
 draw

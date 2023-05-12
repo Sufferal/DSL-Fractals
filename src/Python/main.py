@@ -1,6 +1,37 @@
 import ply.lex as lex
 import ply.yacc as yacc
+import turtle
 
+# Define the function to draw the fractal
+def draw_triangle(length, depth):
+    if depth == 0:
+        # Draw an equilateral triangle
+        for i in range(3):
+            turtle.forward(length)
+            turtle.left(120)
+    else:
+        # Recursively draw three smaller triangles
+        draw_triangle(length / 2, depth - 1)
+        turtle.forward(length / 2)
+        draw_triangle(length / 2, depth - 1)
+        turtle.backward(length / 2)
+        turtle.left(60)
+        turtle.forward(length / 2)
+        turtle.right(60)
+        draw_triangle(length / 2, depth - 1)
+        turtle.left(60)
+        turtle.backward(length / 2)
+        turtle.right(60)
+
+# Set up the turtle
+turtle.speed(150)
+turtle.hideturtle()
+
+# Draw the fractal
+draw_triangle(200, 4)
+
+# Keep the window open until it is manually closed
+turtle.mainloop()
 
 # List of reserved tokens
 reserved = {
@@ -325,17 +356,14 @@ def analyze_program(program, lexer):
 
 if __name__ == '__main__':
     # # Add variables to the symbol table
-    # add_variable('canvas_size', 1000, 'size', 'global')
-    # add_variable('fractal_color', 0, 'color', 'global')
-    # add_variable('number_of_iterations', 10, 'iterations', 'global')
-    # add_variable('fractal_shape', 'triangle', 'shape', 'global')
-    #
-    # # Get the values of variables from the symbol table
-    # canvas_size = get_variable_value('canvas_size', 'global')
-    # fractal_color = get_variable_value('fractal_color', 'global')
-    # number_of_iterations = get_variable_value('number_of_iterations', 'global')
-    # fractal_shape = get_variable_value('fractal_shape', 'global')
-
+    add_variable('canvas_size', 1000, 'size', 'global')
+    add_variable('fractal_color', 0, 'color', 'global')
+    add_variable('fractal_shape', 'triangle', 'shape', 'global')
+    
+    # Get the values of variables from the symbol table
+    canvas_size = get_variable_value('canvas_size', 'global')
+    fractal_color = get_variable_value('fractal_color', 'global')
+    fractal_shape = get_variable_value('fractal_shape', 'global')
 
     # Extracting code from file
     file = open('source.txt', 'r')
@@ -348,12 +376,10 @@ if __name__ == '__main__':
             break
         print(tok)
 
-    # program = data.format(canvas_size, fractal_color, number_of_iterations, fractal_shape)
-
     # Analyze the program
     analyze_program(data, lexer)
-    # analyze_program(program, lexer)
+
     # Print the symbol table
-    # print("Symbol table:")
-    # for key, value in symbol_table.items():
-    #     print(key, value)
+    print("Symbol table:")
+    for key, value in symbol_table.items():
+        print(key, value)
