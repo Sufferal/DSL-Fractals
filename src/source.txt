@@ -1,0 +1,8 @@
+size 800
+color 'white'
+background 'orange'
+shape 'dragon'
+draw
+
+
+
