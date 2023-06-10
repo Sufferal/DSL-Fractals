@@ -1,6 +1,0 @@
-size 1000
-color 0
-shape triangle
-scale 1
-rotate 0
-draw
