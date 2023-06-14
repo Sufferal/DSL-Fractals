@@ -1,8 +1,8 @@
 size 800
-color 'white'
-background 'orange'
+color 'blue'
+background 'yellow'
 shape 'dragon'
-draw
+draw 0
 
 
 
